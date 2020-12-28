@@ -15,7 +15,12 @@
     "test:coverage": "jest --coverage"
   },
   "author": "",
-  "license": "MIT",  
+  "license": "MIT",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
     "*.[jt]s": [
       "eslint --cache --fix"
