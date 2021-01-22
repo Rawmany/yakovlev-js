@@ -51,7 +51,6 @@ let filterValue = '';
 updateTable();
 
 function getCookies() {
-  console.log(document.cookie);
   return document.cookie
     .split('; ')
     .filter(Boolean)
@@ -95,7 +94,6 @@ function updateTable() {
   let total = 0;
 
   listTable.innerHTML = '';
-  console.log(cookiesMap);
 
   for (const [name, value] of cookiesMap) {
     if (
