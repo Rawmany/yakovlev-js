@@ -51,10 +51,11 @@ let filterValue = '';
 updateTable();
 
 function getCookies() {
+  console.log(document.cookie);
   return document.cookie
     .split('; ')
     .filter(Boolean)
-    .map((cookie) => cookie.watch(/^([^=]+)=(.+)/))
+    .map((cookie) => cookie.match(/^([^=]+)=(.+)/))
     .reduce((obj, [, name, value]) => {
       obj.set(name, value);
       return obj;
@@ -94,6 +95,7 @@ function updateTable() {
   let total = 0;
 
   listTable.innerHTML = '';
+  console.log(cookiesMap);
 
   for (const [name, value] of cookiesMap) {
     if (
