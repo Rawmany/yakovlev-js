@@ -13,7 +13,7 @@ export default class LoginWindow {
       const name = loginNameInput.value.trim();
 
       if (!name) {
-        loginError.textContent = 'Введите никнейм';
+        loginError.textContent = 'Введите свой ник';
       } else {
         this.onLogin(name);
       }
