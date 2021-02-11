@@ -1,4 +1,6 @@
 import './index.html';
 import Chat from './chat';
 
-new Chat();
+window.addEventListener('DOMContentLoaded', function () {
+  new Chat();
+});
