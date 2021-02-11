@@ -4,14 +4,14 @@ export default class UserPhoto {
     this.onUpload = onUpload;
     console.log(element);
 
-    document.querySelector('#user-avatar').addEventListener('change', (e) => {
-      // const file = e.dataTransfer.items[0].getAsFile();
-      // const reader = new FileReader();
+    this.input = document.querySelector('#user-avatar');
+    this.input.addEventListener('change', (e) => {
+      const file = this.input.files[0];
+      const reader = new FileReader();
 
-      // reader.readAsDataURL(file);
-      // reader.addEventListener('load', () => this.onUpload(reader.result));
-      // e.preventDefault();
-      console.log(e.files[0]);
+      reader.readAsDataURL(file);
+      reader.addEventListener('load', () => this.onUpload(reader.result));
+      e.preventDefault();
     });
 
     this.element.addEventListener('click', this.onClick);
