@@ -45,6 +45,8 @@ export default class Chat {
         name: this.ui.userName.get(),
         image: data,
       }),
+    }).then(() => {
+      document.body.classList.remove('open');
     });
   }
 
